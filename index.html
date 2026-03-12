@@ -3,797 +3,477 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chuck Hernandez | AI Strategy, Architecture & Due Diligence</title>
-  <meta name="description" content="Independent consultant focused on AI readiness assessments, AI due diligence support, production AI architecture reviews, and fractional technology leadership.">
+  <title>Chuck Hernandez Advisory | AI Strategy, Due Diligence, and Architecture Reviews</title>
+  <meta name="description" content="Independent AI strategy, due diligence, and architecture consulting for CEOs, CTOs, PE teams, and operators making high-stakes technology decisions.">
+  <meta name="author" content="Chuck Hernandez">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#135d5a">
+  <link rel="canonical" href="https://chuckhernandez.com/">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chuck Hernandez Advisory | AI Strategy, Due Diligence, and Architecture Reviews">
+  <meta property="og:description" content="Independent AI advisor for leadership teams evaluating AI vendors, production readiness, and architecture risk.">
+  <meta property="og:url" content="https://chuckhernandez.com/">
+  <meta property="og:site_name" content="Chuck Hernandez Advisory">
+  <meta property="og:image" content="https://chuckhernandez.com/img/og-image.png">
+  <meta property="og:image:alt" content="Chuck Hernandez Advisory social preview">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chuck Hernandez Advisory | AI Strategy, Due Diligence, and Architecture Reviews">
+  <meta name="twitter:description" content="Independent AI advisor for leadership teams making high-stakes technology decisions.">
+  <meta name="twitter:image" content="https://chuckhernandez.com/img/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0c0f14;
-      --bg-card: #13161d;
-      --bg-card-hover: #191d27;
-      --accent: #4ea8de;
-      --accent-dim: rgba(78, 168, 222, 0.12);
-      --accent-glow: rgba(78, 168, 222, 0.25);
-      --text: #e8ecf1;
-      --text-secondary: #8b95a8;
-      --text-dim: #5a6478;
-      --border: rgba(138, 150, 170, 0.1);
-      --success: #5cdb95;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: "DM Sans", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-    section { padding: 80px 0; }
-
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 16px 0;
-      background: rgba(12, 15, 20, 0.85);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    nav .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .nav-name {
-      font-family: "Playfair Display", serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text);
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover { color: var(--accent); }
-
-    .hero {
-      padding-top: 110px;
-      padding-bottom: 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-
-    .hero-text {
-      padding: 56px 0 40px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-image-wrap {
-      position: relative;
-      width: 100%;
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: -4px;
-      border: 1px solid var(--border);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-image-wrap::after {
-      content: "";
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 120px;
-      background: linear-gradient(to top, var(--bg), transparent);
-      pointer-events: none;
-    }
-
-    .hero-image-wrap img {
-      width: 100%;
-      height: auto;
-      display: block;
-      opacity: 0.9;
-    }
-
-    .hero-label,
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: var(--accent-dim);
-      padding: 6px 16px;
-      border-radius: 999px;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(2.4rem, 5.5vw, 3.9rem);
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--text);
-      margin-bottom: 22px;
-      max-width: 860px;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
-    .hero-sub {
-      font-size: 1.08rem;
-      color: var(--text-secondary);
-      max-width: 740px;
-      line-height: 1.8;
-      margin-bottom: 34px;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 34px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 13px 24px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    .btn-primary:hover {
-      background: #3a96cc;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 30px var(--accent-glow);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--text);
-      border-color: rgba(78, 168, 222, 0.22);
-    }
-
-    .btn-secondary:hover {
-      border-color: rgba(78, 168, 222, 0.42);
-      background: rgba(78, 168, 222, 0.06);
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 42px;
-      flex-wrap: wrap;
-    }
-
-    .stat-num {
-      font-family: "Playfair Display", serif;
-      font-size: 1.95rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--text-dim);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-top: 2px;
-    }
-
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 18px;
-      line-height: 1.2;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      color: var(--text-secondary);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 42px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .service-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: all 0.35s ease;
-      position: relative;
-    }
-
-    .service-card::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      opacity: 0;
-      transition: opacity 0.35s;
-      z-index: 2;
-    }
-
-    .service-card:hover {
-      background: var(--bg-card-hover);
-      border-color: rgba(78, 168, 222, 0.2);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .service-card:hover::before { opacity: 1; }
-
-    .service-img-wrap {
-      overflow: hidden;
-      position: relative;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .service-img-wrap::after {
-      content: "";
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 40px;
-      background: linear-gradient(to top, var(--bg-card), transparent);
-      pointer-events: none;
-    }
-
-    .service-img {
-      width: 100%;
-      height: 210px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .service-card:hover .service-img {
-      transform: scale(1.03);
-    }
-
-    .service-body {
-      padding: 24px 28px 28px;
-    }
-
-    .service-card h3 {
-      font-size: 1.08rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-
-    .service-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .service-price,
-    .service-format {
-      display: inline-block;
-      font-size: 0.79rem;
-      font-weight: 700;
-      padding: 5px 12px;
-      border-radius: 6px;
-    }
-
-    .service-price {
-      color: var(--accent);
-      background: var(--accent-dim);
-    }
-
-    .service-format {
-      color: var(--success);
-      background: rgba(92, 219, 149, 0.1);
-    }
-
-    .proof-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .proof-item {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 24px;
-      padding: 28px 32px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      align-items: start;
-      transition: all 0.3s ease;
-    }
-
-    .proof-item:hover {
-      border-color: rgba(78, 168, 222, 0.15);
-      background: var(--bg-card-hover);
-    }
-
-    .proof-name {
-      font-weight: 700;
-      font-size: 0.96rem;
-      color: var(--text);
-    }
-
-    .proof-tag {
-      display: inline-block;
-      margin-top: 6px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 4px;
-      background: var(--accent-dim);
-      color: var(--accent);
-    }
-
-    .proof-tag.green {
-      background: rgba(92, 219, 149, 0.1);
-      color: var(--success);
-    }
-
-    .proof-desc {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      line-height: 1.75;
-    }
-
-    .proof-link {
-      display: inline-block;
-      margin-top: 8px;
-      color: var(--accent);
-      font-size: 0.85rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .proof-link:hover { opacity: 0.72; }
-
-    .stack-section {
-      background: var(--bg-card);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .stack-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 32px;
-    }
-
-    .stack-group h4 {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
-
-    .stack-group p {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.8;
-    }
-
-    .contact-box {
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .contact-box p {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      margin-bottom: 30px;
-      line-height: 1.8;
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--bg);
-      background: var(--accent);
-      padding: 14px 32px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.3s;
-      letter-spacing: 0.02em;
-    }
-
-    .contact-link:hover {
-      background: #3a96cc;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 30px var(--accent-glow);
-    }
-
-    .contact-secondary {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      margin-top: 24px;
-      flex-wrap: wrap;
-    }
-
-    .contact-secondary a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .contact-secondary a:hover { color: var(--accent); }
-
-    footer {
-      padding: 32px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--text-dim);
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 900px) {
-      .services-grid,
-      .stack-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      section { padding: 56px 0; }
-      .hero { padding-top: 96px; }
-      .hero-text { padding-top: 48px; }
-      .hero-stats { gap: 28px; }
-      .proof-item { grid-template-columns: 1fr; gap: 10px; padding: 24px; }
-      .service-img { height: 190px; }
-      .nav-links { gap: 16px; }
-      .nav-links a { font-size: 0.75rem; }
-      .contact-secondary { gap: 14px; }
-    }
-
-    @media (max-width: 560px) {
-      .nav-links { display: none; }
-      .container { padding: 0 18px; }
-      .hero h1 { font-size: clamp(2rem, 9vw, 3rem); }
-      .hero-sub { font-size: 1rem; }
-      .hero-cta { flex-direction: column; align-items: stretch; }
-      .btn { width: 100%; }
-      .proof-item { padding: 20px; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="site.js" defer></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://chuckhernandez.com/#person",
+          "name": "Chuck Hernandez",
+          "url": "https://chuckhernandez.com/",
+          "jobTitle": "AI Strategy and Architecture Consultant",
+          "image": "https://chuckhernandez.com/img/chuck.jpeg",
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of San Francisco"
+          },
+          "sameAs": [
+            "https://linkedin.com/in/chuck-hernandez",
+            "https://github.com/aidevcode9"
+          ],
+          "knowsAbout": [
+            "AI strategy",
+            "AI due diligence",
+            "production AI architecture",
+            "retrieval systems",
+            "enterprise AI governance",
+            "technology modernization"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://chuckhernandez.com/#business",
+          "name": "Chuck Hernandez Advisory",
+          "url": "https://chuckhernandez.com/",
+          "image": "https://chuckhernandez.com/img/chuck.jpeg",
+          "description": "Independent consulting for AI readiness, vendor diligence, production architecture review, and fractional technology leadership.",
+          "founder": {
+            "@id": "https://chuckhernandez.com/#person"
+          },
+          "areaServed": "United States",
+          "sameAs": [
+            "https://linkedin.com/in/chuck-hernandez",
+            "https://github.com/aidevcode9"
+          ],
+          "serviceType": [
+            "AI Readiness Assessment",
+            "AI Due Diligence Support",
+            "Production AI Architecture Review",
+            "Fractional Technology Leadership",
+            "Embedded AI Engineering Sprint"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://chuckhernandez.com/#website",
+          "url": "https://chuckhernandez.com/",
+          "name": "Chuck Hernandez Advisory",
+          "publisher": {
+            "@id": "https://chuckhernandez.com/#business"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://chuckhernandez.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "When should a team bring in an external AI advisor?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "External help is useful when the decision is expensive, politically sensitive, or technically unclear. Typical triggers include vendor selection, production readiness reviews, M&A diligence, and executive teams needing an objective read on AI delivery risk."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What does an AI readiness assessment cover?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A readiness assessment covers data quality, architecture, model and retrieval patterns, security and governance, evaluation methods, observability, operating model, and release discipline. The output is usually an executive briefing with a risk-ranked action plan."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you work with private equity or advisory teams?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. AI due diligence work can support PE operating teams, advisory firms, and leadership groups assessing AI-heavy businesses, vendors, or product strategies before making a commitment."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you review AI systems that are already live?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Production AI architecture reviews focus on grounding quality, evals, safety controls, observability, release gates, and operational risk in systems that already have a pilot or production footprint."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
-  <nav>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
     <div class="container">
-      <div class="nav-name">Chuck Hernandez</div>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Proof</a></li>
-        <li><a href="#stack">Expertise</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+      <a class="brand" href="index.html" aria-label="Chuck Hernandez Advisory home">
+        <span class="brand-mark" aria-hidden="true">CH</span>
+        <span class="brand-copy">
+          <span class="brand-name">Chuck Hernandez</span>
+          <span class="brand-tag">Independent AI Advisor</span>
+        </span>
+      </a>
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="hero-text">
-          <div class="hero-label reveal">Available for Select Engagements</div>
-          <h1 class="reveal">AI strategy, architecture, and <em>due diligence</em> for teams that need a blunt read.</h1>
-          <p class="hero-sub reveal">I help leadership teams evaluate AI vendors, assess production readiness, and turn AI plans into controlled execution. My strongest lane is executive-facing work where architecture, delivery risk, governance, and vendor decisions all intersect.</p>
+      <div class="site-nav-wrap">
+        <button class="menu-button" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
 
-          <div class="hero-cta reveal">
-            <a class="btn btn-primary" href="https://cal.com/chuck-h-cll6vj/15min" target="_blank" rel="noopener">Book a conversation</a>
-            <a class="btn btn-secondary" href="#services">View services</a>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="header-cta">
+            <a class="button button-primary" href="https://cal.com/chuck-h-cll6vj/15min" target="_blank" rel="noopener">Book Intro Call</a>
           </div>
-
-          <div class="hero-stats reveal">
-            <div>
-              <div class="stat-num">10+</div>
-              <div class="stat-label">Years Tech Leadership</div>
-            </div>
-            <div>
-              <div class="stat-num">3+</div>
-              <div class="stat-label">Years Production GenAI</div>
-            </div>
-            <div>
-              <div class="stat-num">135</div>
-              <div class="stat-label">Stores Supported</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-image-wrap reveal">
-          <img src="hero.png" alt="Production AI orchestration from strategy to deployment with eval-driven releases, agentic workflows, and enterprise RAG" loading="eager">
-        </div>
+        </nav>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section id="services">
-    <div class="container">
-      <div class="section-label reveal">What I Do</div>
-      <h2 class="section-title reveal">Consulting Services</h2>
-      <p class="section-intro reveal">The fastest path for most clients is not a broad transformation project. It is a focused assessment that clarifies risk, vendor fit, operating gaps, and what to do next.</p>
-
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="service-img-wrap">
-            <img class="service-img" src="readiness-assessment.png" alt="AI readiness assessment with risk-ranked scorecard across governance, data quality, architecture, and operations">
+  <main id="content">
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow reveal">AI Strategy, Diligence, and Delivery</div>
+            <h1 class="display reveal">Independent advice for teams making expensive AI decisions.</h1>
+            <p class="lead reveal">I work with CEOs, CTOs, PE operating teams, and product leaders when an AI vendor decision, architecture review, or delivery plan needs an honest technical read. The work is executive-facing, practical, and designed to reduce risk before it becomes an expensive commitment.</p>
+            <div class="cta-row reveal">
+              <a class="button button-primary" href="https://cal.com/chuck-h-cll6vj/15min" target="_blank" rel="noopener">Book Intro Call</a>
+              <a class="button button-secondary" href="services.html">Review Services</a>
+            </div>
+            <div class="trust-row reveal" aria-label="Primary consulting themes">
+              <span class="pill">AI readiness assessments</span>
+              <span class="pill">Vendor diligence</span>
+              <span class="pill">Production architecture reviews</span>
+              <span class="pill">Fractional advisory support</span>
+            </div>
           </div>
-          <div class="service-body">
+
+          <div class="hero-side">
+            <figure class="portrait-card reveal">
+              <div class="portrait-frame">
+                <img src="img/chuck.jpeg" alt="Chuck Hernandez portrait" width="400" height="400" loading="eager">
+              </div>
+              <figcaption class="portrait-copy">
+                <strong>Chuck Hernandez</strong>
+                <span>Independent AI strategy and architecture advisor</span>
+              </figcaption>
+              <p class="portrait-note">Direct technical judgment for vendor reviews, readiness assessments, and production AI decisions.</p>
+            </figure>
+
+            <aside class="hero-panel reveal">
+              <h2>Best fit when:</h2>
+              <ul class="list-clean">
+                <li>an AI vendor or platform decision carries real financial or operating risk</li>
+                <li>a pilot exists but production controls, observability, or governance are weak</li>
+                <li>leadership needs a concise technical view before approving a roadmap</li>
+                <li>a company needs senior guidance without hiring a full-time executive</li>
+              </ul>
+
+              <div class="credentials">
+                <span class="credential">M.S. Information Systems</span>
+                <span class="credential">Azure Data Fundamentals</span>
+                <span class="credential">IBM AI Engineering</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <div class="metric-row">
+          <div class="metric reveal">
+            <div class="metric-value">10+</div>
+            <div class="metric-label">Years in Tech Leadership</div>
+          </div>
+          <div class="metric reveal">
+            <div class="metric-value">1,000</div>
+            <div class="metric-label">Employee Org Served</div>
+          </div>
+          <div class="metric reveal">
+            <div class="metric-value">100+</div>
+            <div class="metric-label">Retail Stores Supported</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Why Clients Call</div>
+          <h2>The work usually starts with uncertainty, not with a blank slate.</h2>
+          <p>Most companies do not need broad AI transformation theater. They need a sharp outside perspective on risk, vendor fit, readiness, and what to do next.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <div class="card-tag">Decision Support</div>
+            <h3>Vendor and platform choices need a technical counterweight.</h3>
+            <p>When sales narratives outrun evidence, I help leadership teams evaluate architecture, controls, delivery claims, and operating impact before they commit.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-tag">Production Risk</div>
+            <h3>An AI pilot exists, but the production story is thin.</h3>
+            <p>I review grounding patterns, eval discipline, release controls, and observability so teams can separate a convincing demo from a stable operating system.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-tag">Leadership Gap</div>
+            <h3>The company needs senior technical judgment without a full-time hire.</h3>
+            <p>For short, high-leverage windows, fractional advisory support gives founders and operating teams access to senior architecture and delivery guidance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Services</div>
+          <h2>Structured engagements designed to produce a decision, not more ambiguity.</h2>
+          <p>Each offer is scoped to a concrete business trigger: evaluating a vendor, validating AI readiness, pressure-testing an architecture, or stabilizing leadership around delivery.</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card service-card reveal">
+            <div class="service-meta">2-3 weeks</div>
             <h3>AI Readiness Assessment</h3>
-            <p>Focused review of your AI infrastructure, governance, data readiness, architecture, and operating risk. Includes a risk-ranked scorecard, executive briefing, and remediation roadmap.</p>
-            <div class="service-meta">
-              <span class="service-price">$15K – $25K</span>
-              <span class="service-format">2–3 weeks</span>
-            </div>
-          </div>
-        </div>
+            <p>Review governance, data quality, architecture, operating model, and release discipline. The output is a risk-ranked scorecard and an executive-ready action plan.</p>
+            <a class="link-inline" href="services.html#readiness">See deliverables</a>
+          </article>
 
-        <div class="service-card reveal">
-          <div class="service-img-wrap">
-            <img class="service-img" src="ai-due-diligence.png" alt="AI due diligence support using a control-based scorecard for governance, evaluation frameworks, and compliance risk">
-          </div>
-          <div class="service-body">
+          <article class="card service-card reveal">
+            <div class="service-meta">Project based</div>
             <h3>AI Due Diligence Support</h3>
-            <p>Structured assessment for PE firms, advisory teams, or operators evaluating AI-heavy businesses, vendors, or platforms. Control-based findings, severity ranking, and a practical 100-day plan.</p>
-            <div class="service-meta">
-              <span class="service-price">$15K – $30K</span>
-              <span class="service-format">Project-based</span>
-            </div>
-          </div>
-        </div>
+            <p>Support PE teams, advisors, and operators assessing AI-heavy businesses, vendors, or product claims. Focus areas include controls, architecture maturity, and near-term execution risk.</p>
+            <a class="link-inline" href="services.html#diligence">See deliverables</a>
+          </article>
 
-        <div class="service-card reveal">
-          <div class="service-img-wrap">
-            <img class="service-img" src="production-build.png" alt="Production AI architecture review showing orchestration, observation, and action loops">
-          </div>
-          <div class="service-body">
+          <article class="card service-card reveal">
+            <div class="service-meta">1-2 weeks</div>
             <h3>Production AI Architecture Review</h3>
-            <p>Independent review of an existing AI system’s grounding, evals, safety controls, observability, release discipline, and delivery risks. Best for teams that already have a pilot or live build.</p>
-            <div class="service-meta">
-              <span class="service-price">Scoped per project</span>
-              <span class="service-format">1–2 weeks</span>
-            </div>
-          </div>
-        </div>
+            <p>Independent review of a live or near-live AI system across grounding, evals, safety, observability, and release discipline. Best for teams that already have code and momentum.</p>
+            <a class="link-inline" href="services.html#architecture">See deliverables</a>
+          </article>
 
-        <div class="service-card reveal">
-          <div class="service-img-wrap">
-            <img class="service-img" src="fractional-cto.png" alt="Fractional technology leadership with architecture direction, team assessment, AI strategy, and delivery discipline">
-          </div>
-          <div class="service-body">
+          <article class="card service-card reveal">
+            <div class="service-meta">Retainer or hourly</div>
             <h3>Fractional Technology Leadership</h3>
-            <p>Part-time leadership for companies that need senior direction on architecture, delivery discipline, AI strategy, vendor evaluation, and technical team assessment without a full-time executive hire.</p>
-            <div class="service-meta">
-              <span class="service-price">$200 – $300/hr</span>
-              <span class="service-format">Retainer or hourly</span>
+            <p>Senior direction on architecture, delivery discipline, vendor evaluation, and technical team assessment for companies that need experienced guidance without a full-time executive hire.</p>
+            <a class="link-inline" href="services.html#fractional">See deliverables</a>
+          </article>
+        </div>
+
+        <article class="panel reveal spacer-top">
+          <div class="detail-grid">
+            <div>
+              <div class="service-meta">Custom engagement</div>
+              <h3>Embedded AI Engineering Sprint</h3>
+              <p class="spacer-top">This is the bridge between the consulting site and the hands-on engineering profile in your resume. For teams that need a senior AI engineer in the codebase, I take selective short engagements building or stabilizing RAG systems, orchestration layers, eval stacks, and real-time voice workflows.</p>
+              <p class="spacer-top">Best fit when the company needs staff or principal-level execution before, during, or instead of a full-time hire.</p>
+              <p class="spacer-top"><a class="link-inline" href="services.html#embedded">See how the sprint works</a></p>
+            </div>
+
+            <aside class="detail-sidebar">
+              <h3>Typical build lanes</h3>
+              <ul>
+                <li>hybrid retrieval and reranking over pgvector or Azure AI Search</li>
+                <li>agentic orchestration with structured outputs and tool governance</li>
+                <li>real-time voice agents, guardrails, and provider fallback chains</li>
+                <li>evals, telemetry, drift monitoring, and release discipline</li>
+              </ul>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="proof">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Selected Proof</div>
+          <h2>Executive-facing work, production systems, and modern AI builds.</h2>
+          <p>The strongest through-line in my background is helping leadership teams move from technical noise to a clear operating decision.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <div class="case-meta">Enterprise AI Delivery</div>
+            <h3>Conversational AI for a 1,000-person insurance organization</h3>
+            <p>Worked from discovery through production rollout, aligning senior stakeholders on scope, delivery shape, and operational execution.</p>
+            <a class="link-inline" href="case-studies.html">Read case snapshot</a>
+          </article>
+
+          <article class="card reveal">
+            <div class="case-meta">Retail Modernization</div>
+            <h3>Executive briefings and AI vendor assessment work</h3>
+            <p>Supported modernization work and third-party AI vendor review for a regional grocery platform serving 100+ stores.</p>
+            <a class="link-inline" href="case-studies.html">Read case snapshot</a>
+          </article>
+
+          <article class="card reveal">
+            <div class="case-meta">Grounded AI Systems</div>
+            <h3>Evidence-bound document QA and agentic platform design</h3>
+            <p>Built production-minded retrieval and orchestration patterns with citation validation, report generation, tool governance, and Azure OpenAI integration.</p>
+            <a class="link-inline" href="case-studies.html">Read case snapshot</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Process</div>
+          <h2>Short engagements with clear outputs.</h2>
+          <p>The goal is to give leadership a defensible view of risk, fit, and next actions without turning the engagement into its own bureaucracy.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step reveal">
+            <span>1</span>
+            <h3>Frame the decision</h3>
+            <p>We define the exact decision being made, the operating context, and the downside if the wrong assumption survives.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <span>2</span>
+            <h3>Review the evidence</h3>
+            <p>Architecture, controls, product claims, data realities, team constraints, and vendor narratives get compared against what is actually in place.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <span>3</span>
+            <h3>Rank the risk</h3>
+            <p>Issues are translated into business language with severity, confidence, and the likely operating consequences of leaving them unresolved.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <span>4</span>
+            <h3>Give leadership a path</h3>
+            <p>The output is a blunt read plus a pragmatic next-step plan: what to fix now, what to defer, and what should not move forward yet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">FAQ</div>
+          <h2>Questions buyers usually ask before they reach out.</h2>
+          <p>This site is intentionally direct because most engagements begin with a practical question, not with a vague interest in AI strategy.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary>When is the right time to bring in an external AI consultant?</summary>
+            <p>The best time is before a large vendor commitment, before leadership greenlights a production push, or when a team needs an objective read that internal politics make harder to produce.</p>
+          </details>
+
+          <details class="faq-item reveal">
+            <summary>Do you only work on greenfield AI projects?</summary>
+            <p>No. A large share of the work is reviewing systems that already exist, evaluating vendors that are already in the room, or stabilizing a roadmap that is already moving.</p>
+          </details>
+
+          <details class="faq-item reveal">
+            <summary>Can you support PE or transaction-oriented diligence work?</summary>
+            <p>Yes. AI diligence can be structured around architecture maturity, control gaps, team capability, and the likely effort required to make vendor or product claims durable.</p>
+          </details>
+
+          <details class="faq-item reveal">
+            <summary>What does a useful engagement output look like?</summary>
+            <p>Usually an executive briefing, a risk-ranked scorecard, and a practical action plan with priorities. The output should help a leadership team act, not just admire analysis.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <div>
+            <div class="section-kicker">Next Step</div>
+            <h2>Start with a direct conversation.</h2>
+            <p class="spacer-top">If you are evaluating a vendor, pressure-testing a production plan, or need an outside read before committing more time or budget, book a short intro call. I can usually tell quickly whether there is a real fit.</p>
+            <div class="contact-actions">
+              <a class="button button-primary" href="https://cal.com/chuck-h-cll6vj/15min" target="_blank" rel="noopener">Book 15-Min Call</a>
+              <a class="button button-secondary" href="contact.html">View Contact Options</a>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="work">
-    <div class="container">
-      <div class="section-label reveal">Proof of Work</div>
-      <h2 class="section-title reveal">Real Systems and Executive-Facing Delivery</h2>
-      <p class="section-intro reveal">My background is strongest where technical depth and decision support meet: production systems, modernization work, executive briefings, and technology assessment.</p>
-
-      <div class="proof-grid">
-        <div class="proof-item reveal">
-          <div>
-            <div class="proof-name">Enterprise Conversational AI</div>
-            <span class="proof-tag green">Production</span>
-          </div>
-          <div>
-            <p class="proof-desc">Led an enterprise conversational AI deployment for a 4,000-person insurance organization. Worked from discovery with senior stakeholders through production go-live and operational rollout.</p>
-          </div>
-        </div>
-
-        <div class="proof-item reveal">
-          <div>
-            <div class="proof-name">Executive Briefings and Vendor Assessment</div>
-            <span class="proof-tag green">Retail Modernization</span>
-          </div>
-          <div>
-            <p class="proof-desc">Prepared executive briefings during Cub platform modernization and supported third-party AI vendor assessment work, including Cognira, to evaluate fit, operating impact, and risk exposure.</p>
-          </div>
-        </div>
-
-        <div class="proof-item reveal">
-          <div>
-            <div class="proof-name">Evidence-Bound Doc Q&amp;A</div>
-            <span class="proof-tag">RAG Pipeline</span>
-          </div>
-          <div>
-            <p class="proof-desc">Built a 6-stage retrieval pipeline with citation validation so every answer stays grounded in source documents with verifiable evidence.</p>
-            <a href="https://github.com/aidevcode9/evidence-doc-qa" class="proof-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-          </div>
-        </div>
-
-        <div class="proof-item reveal">
-          <div>
-            <div class="proof-name">AI-Driven Learning Platform</div>
-            <span class="proof-tag green">Live</span>
-          </div>
-          <div>
-            <p class="proof-desc">Designed and deployed an AI-powered learning platform with embedded assistant workflows, AI-assisted course creation, and custom API integrations from scope through launch.</p>
-            <a href="https://iykykeducation.com" class="proof-link" target="_blank" rel="noopener">iykykeducation.com &rarr;</a>
-          </div>
-        </div>
-
-        <div class="proof-item reveal">
-          <div>
-            <div class="proof-name">Kairosys Agentic Platform</div>
-            <span class="proof-tag">LangGraph</span>
-          </div>
-          <div>
-            <p class="proof-desc">Designed a multi-agent platform with FastAPI, PostgreSQL/pgvector, Azure OpenAI, permissioned tool governance, report generation, and production-minded orchestration patterns.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="services.html">
+              <strong>Need scope first?</strong>
+              <span>Review the service formats and where each one fits.</span>
+            </a>
+            <a class="contact-link" href="case-studies.html">
+              <strong>Need proof first?</strong>
+              <span>See representative work across enterprise AI, modernization, and retrieval systems.</span>
+            </a>
+            <a class="contact-link" href="insights.html">
+              <strong>Need signal first?</strong>
+              <span>Read the articles buyers use to evaluate AI readiness and delivery risk.</span>
+            </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section id="stack" class="stack-section">
+  <footer class="site-footer">
     <div class="container">
-      <div class="section-label reveal">Technical Expertise</div>
-      <h2 class="section-title reveal">What I Work With</h2>
-      <div class="stack-grid">
-        <div class="stack-group reveal">
-          <h4>AI / ML</h4>
-          <p>Azure OpenAI, OpenAI, LangGraph, LangChain, LlamaIndex, RAG architectures, multi-agent orchestration, eval harnesses, grounding patterns, prompt-injection defenses, OpenTelemetry</p>
-        </div>
-        <div class="stack-group reveal">
-          <h4>Engineering</h4>
-          <p>Python, FastAPI, Java, Spring Boot, REST APIs, PostgreSQL/pgvector, MySQL, Oracle, Docker, PDF/report generation, workflow orchestration</p>
-        </div>
-        <div class="stack-group reveal">
-          <h4>Cloud & Delivery</h4>
-          <p>AWS, Azure, GCP, release gates, fail-closed controls, provider risk management, production observability, CI/CD, architecture reviews, modernization programs</p>
-        </div>
+      <div class="footer-copy">
+        <p>Chuck Hernandez Advisory is an independent consulting practice focused on AI readiness, AI due diligence, production architecture reviews, and fractional technology leadership.</p>
+        <p class="muted-note spacer-top">Copyright <span data-year></span> Chuck Hernandez. Built for clear positioning, search visibility, and executive trust.</p>
       </div>
-    </div>
-  </section>
 
-  <section id="contact">
-    <div class="container">
-      <div class="contact-box">
-        <div class="section-label reveal">Get in Touch</div>
-        <h2 class="section-title reveal">Start with a direct conversation</h2>
-        <p class="reveal">Available for project-based consulting, expert calls, and selective advisory work. Best fit: AI readiness, technology assessment, AI vendor evaluation, and production architecture review.</p>
-        <a href="https://cal.com/chuck-h-cll6vj/15min" class="contact-link reveal" target="_blank" rel="noopener">Book a 15-min call &rarr;</a>
-        <div class="contact-secondary reveal">
-          <a href="https://linkedin.com/in/chuck-hernandez" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/aidevcode9" target="_blank" rel="noopener">GitHub</a>
-        </div>
+      <div class="footer-links">
+        <a class="pill" href="about.html">About</a>
+        <a class="pill" href="services.html">Services</a>
+        <a class="pill" href="case-studies.html">Case Studies</a>
+        <a class="pill" href="insights.html">Insights</a>
+        <a class="pill" href="contact.html">Contact</a>
       </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>M.S., Information Systems &mdash; University of San Francisco &nbsp;&middot;&nbsp; Microsoft Azure Data Fundamentals &nbsp;&middot;&nbsp; IBM AI Engineering</p>
     </div>
   </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-  </script>
 </body>
 </html>

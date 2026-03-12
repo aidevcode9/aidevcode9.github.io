@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Chuck Hernandez Advisory">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#135d5a" />
+      <stop offset="100%" stop-color="#8b5f4a" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="#fff9f1" />
+  <rect x="10" y="10" width="108" height="108" rx="24" fill="url(#g)" />
+  <path d="M36 34h14v60H36zm42 0c14.5 0 24 8.8 24 21.8 0 12.8-9.5 21.2-24 21.2H70V94H56V34zm0 31c6.6 0 10.5-3.6 10.5-9.2 0-5.8-3.9-9.6-10.5-9.6H70V65z" fill="#fffdf8" />
+</svg>

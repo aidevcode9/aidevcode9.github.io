@@ -1,0 +1,33 @@
+# Chuck Hernandez Advisory
+
+> Independent AI strategy, due diligence, and architecture consulting for leadership teams making high-stakes technology decisions.
+
+## Primary Services
+- AI Readiness Assessment: https://chuckhernandez.com/services.html#readiness
+- AI Due Diligence Support: https://chuckhernandez.com/services.html#diligence
+- Production AI Architecture Review: https://chuckhernandez.com/services.html#architecture
+- Fractional Technology Leadership: https://chuckhernandez.com/services.html#fractional
+- Embedded AI Engineering Sprint: https://chuckhernandez.com/services.html#embedded
+
+## Core Pages
+- Home: https://chuckhernandez.com/
+- Services: https://chuckhernandez.com/services.html
+- About: https://chuckhernandez.com/about.html
+- Case Studies: https://chuckhernandez.com/case-studies.html
+- Insights: https://chuckhernandez.com/insights.html
+- Contact: https://chuckhernandez.com/contact.html
+
+## Articles
+- AI Due Diligence Checklist: https://chuckhernandez.com/ai-due-diligence-checklist.html
+- Is Your AI Pilot Ready for Production: https://chuckhernandez.com/ai-pilot-ready-for-production.html
+- Minimum Control Stack for Enterprise AI: https://chuckhernandez.com/minimum-control-stack-enterprise-ai.html
+
+## Positioning
+- Buyer focus: CEOs, CTOs, PE operating teams, product leaders, and operators evaluating AI vendors or moving AI systems into production.
+- Engagement model: short, high-leverage consulting engagements, advisory work, architecture reviews, and fractional leadership support.
+- Expertise themes: AI readiness, vendor evaluation, retrieval systems, grounded generation, enterprise governance, evals, observability, release controls, and modernization programs.
+
+## Contact
+- Scheduling: https://cal.com/chuck-h-cll6vj/15min
+- LinkedIn: https://linkedin.com/in/chuck-hernandez
+- GitHub: https://github.com/aidevcode9

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Minimum Control Stack for Enterprise AI Systems | Chuck Hernandez Advisory</title>
+  <meta name="description" content="A practical view of the minimum control stack enterprise AI systems need before usage scales: grounding, evals, permissions, observability, and release gates.">
+  <meta name="author" content="Chuck Hernandez">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#135d5a">
+  <link rel="canonical" href="https://chuckhernandez.com/minimum-control-stack-enterprise-ai.html">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Minimum Control Stack for Enterprise AI Systems">
+  <meta property="og:description" content="What enterprise AI systems need before usage scales: grounding, evals, permissions, observability, and release controls.">
+  <meta property="og:url" content="https://chuckhernandez.com/minimum-control-stack-enterprise-ai.html">
+  <meta property="og:site_name" content="Chuck Hernandez Advisory">
+  <meta property="og:image" content="https://chuckhernandez.com/img/og-image.png">
+  <meta property="og:image:alt" content="Chuck Hernandez Advisory social preview">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Minimum Control Stack for Enterprise AI Systems">
+  <meta name="twitter:description" content="What enterprise AI systems need before usage scales: grounding, evals, permissions, observability, and release controls.">
+  <meta name="twitter:image" content="https://chuckhernandez.com/img/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="site.js" defer></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Minimum Control Stack for Enterprise AI Systems",
+      "description": "A practical view of the minimum control stack enterprise AI systems need before usage scales: grounding, evals, permissions, observability, and release gates.",
+      "datePublished": "2026-03-12",
+      "dateModified": "2026-03-12",
+      "author": {
+        "@type": "Person",
+        "name": "Chuck Hernandez"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Chuck Hernandez Advisory",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://chuckhernandez.com/img/favicon.svg"
+        }
+      },
+      "mainEntityOfPage": "https://chuckhernandez.com/minimum-control-stack-enterprise-ai.html"
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Chuck Hernandez Advisory home">
+        <span class="brand-mark" aria-hidden="true">CH</span>
+        <span class="brand-copy">
+          <span class="brand-name">Chuck Hernandez</span>
+          <span class="brand-tag">Independent AI Advisor</span>
+        </span>
+      </a>
+
+      <div class="site-nav-wrap">
+        <button class="menu-button" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="insights.html" aria-current="page">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="header-cta">
+            <a class="button button-primary" href="https://cal.com/chuck-h-cll6vj/15min" target="_blank" rel="noopener">Book Intro Call</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="page-hero compact">
+      <div class="container">
+        <div class="hero-copy">
+          <div class="eyebrow reveal">Insight</div>
+          <h1 class="page-title reveal">The minimum control stack for enterprise AI systems</h1>
+          <p class="lead reveal">Not every AI system needs a giant governance program on day one. But once usage becomes meaningful, a small set of controls needs to exist so quality, access, and failure are no longer a mystery.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="article-shell">
+          <article class="article-content prose reveal">
+            <p>The phrase "enterprise AI governance" can drift into abstraction quickly. In practice, the useful question is simpler: what is the minimum control stack that lets a team operate an AI system without pretending it is safer or more reliable than it really is?</p>
+
+            <h2>1. Grounding you can explain</h2>
+            <p>If the system answers questions from source material, the retrieval path needs to be understandable. Teams should know where content comes from, how freshness is handled, how ranking works, and what happens when the answer is not present. Reliable citation behavior is often the difference between a useful assistant and an unpredictable liability.</p>
+
+            <h2>2. Evals that survive product pressure</h2>
+            <p>A minimal eval layer means more than spot-checking outputs. You need representative scenarios, a way to compare versions, and a habit of re-running important cases when prompts, retrieval, or orchestration change. Otherwise quality becomes a moving target that only shows up in support tickets.</p>
+
+            <h2>3. Permission boundaries around tools and actions</h2>
+            <p>If the system can take actions, call tools, or surface privileged information, access boundaries need to be explicit. This includes role-based access, tool-specific policies, and at least a basic model for what the system is not allowed to do. Agentic behavior without clear guardrails is operational risk disguised as sophistication.</p>
+
+            <h2>4. Observability and traceability</h2>
+            <p>At minimum, teams should capture enough logging and tracing to answer four questions: what prompt or workflow fired, what sources or tools were used, what output was produced, and how the system behaved when something went wrong. If the answer to any incident is "we cannot really tell," the control layer is still too thin.</p>
+
+            <h2>5. Release gates</h2>
+            <p>Prompt changes, tool changes, retrieval changes, and orchestration changes all deserve a lightweight release path. That does not require heavyweight process, but it does require version awareness, some regression checking, and the ability to roll back when quality drops.</p>
+
+            <h2>6. Incident and feedback loop</h2>
+            <p>Someone has to own the question of what happens after failure. That means a path for reporting bad outputs, reviewing incidents, learning from them, and feeding the lessons back into evals or controls. Without that loop, the system does not improve in a disciplined way.</p>
+
+            <h2>Minimum does not mean optional</h2>
+            <p>These controls are not bureaucratic accessories. They are what make a system governable. If usage is growing and the controls are absent, the team is effectively borrowing confidence from the future and hoping operations never call the debt in.</p>
+            <p>That is usually the right moment for an architecture review: before the system becomes politically important enough that everyone has to pretend it is stable.</p>
+          </article>
+
+          <aside class="article-aside reveal">
+            <h2>Best use</h2>
+            <ul>
+              <li>for live or near-live AI systems</li>
+              <li>when leadership asks what controls should exist now</li>
+              <li>when usage is growing faster than operating discipline</li>
+            </ul>
+
+            <h2 class="spacer-top">Related pages</h2>
+            <ul>
+              <li><a class="link-inline" href="services.html#architecture">Production AI Architecture Review</a></li>
+              <li><a class="link-inline" href="services.html#readiness">AI Readiness Assessment</a></li>
+              <li><a class="link-inline" href="contact.html">Book Intro Call</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-copy">
+        <p>Independent consulting practice focused on AI readiness, due diligence, production architecture reviews, and fractional technology leadership.</p>
+        <p class="muted-note spacer-top">Copyright <span data-year></span> Chuck Hernandez.</p>
+      </div>
+
+      <div class="footer-links">
+        <a class="pill" href="insights.html">Insights</a>
+        <a class="pill" href="services.html">Services</a>
+        <a class="pill" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
