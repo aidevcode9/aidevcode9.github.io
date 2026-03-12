@@ -16,6 +16,7 @@
 - Case Studies: https://chuckhernandez.com/case-studies.html
 - Insights: https://chuckhernandez.com/insights.html
 - Contact: https://chuckhernandez.com/contact.html
+- For Hiring: https://chuckhernandez.com/for-hiring.html
 
 ## Articles
 - AI Due Diligence Checklist: https://chuckhernandez.com/ai-due-diligence-checklist.html
@@ -23,7 +24,7 @@
 - Minimum Control Stack for Enterprise AI: https://chuckhernandez.com/minimum-control-stack-enterprise-ai.html
 
 ## Positioning
-- Buyer focus: CEOs, CTOs, PE operating teams, product leaders, and operators evaluating AI vendors or moving AI systems into production.
+- Buyer focus: CEOs, CTOs, leadership teams, product leaders, and operators evaluating AI vendors or moving AI systems into production.
 - Engagement model: short, high-leverage consulting engagements, advisory work, architecture reviews, and fractional leadership support.
 - Expertise themes: AI readiness, vendor evaluation, retrieval systems, grounded generation, enterprise governance, evals, observability, release controls, and modernization programs.
 
