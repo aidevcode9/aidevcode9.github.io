@@ -17,6 +17,7 @@
 - Insights: https://chuckhernandez.com/insights.html
 - Contact: https://chuckhernandez.com/contact.html
 - For Hiring: https://chuckhernandez.com/for-hiring.html
+- Selected Work: https://chuckhernandez.com/selected-work.html
 
 ## Articles
 - AI Due Diligence Checklist: https://chuckhernandez.com/ai-due-diligence-checklist.html
