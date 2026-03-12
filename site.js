@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const emitAnalyticsEvent = (name, params = {}) => {
+    const detail = {
+      name,
+      ...params,
+      path: window.location.pathname
+    };
+
+    window.dispatchEvent(new CustomEvent("site:analytics", { detail }));
+
+    if (typeof window.gtag === "function") {
+      window.gtag("event", name, detail);
+    }
+
+    if (typeof window.plausible === "function") {
+      window.plausible(name, { props: detail });
+    }
+  };
+
   const menuButton = document.querySelector(".menu-button");
   const siteNav = document.getElementById("site-nav");
 
@@ -50,5 +68,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll("[data-year]").forEach((node) => {
     node.textContent = String(new Date().getFullYear());
+  });
+
+  document.querySelectorAll("a[href]").forEach((link) => {
+    const href = link.getAttribute("href") || "";
+    let eventName = "";
+
+    if (href.includes("cal.com/chuck-h-cll6vj/15min")) {
+      eventName = "book_intro_click";
+    } else if (href.startsWith("mailto:")) {
+      eventName = "email_click";
+    } else if (href.includes("linkedin.com/in/chuck-hernandez")) {
+      eventName = "linkedin_click";
+    } else if (href.endsWith("for-hiring.html")) {
+      eventName = "for_hiring_click";
+    } else if (href.endsWith("selected-work.html")) {
+      eventName = "selected_work_click";
+    } else if (href.includes("github.com/aidevcode9/evidence-doc-qa")) {
+      eventName = "repo_click";
+    }
+
+    if (!eventName) {
+      return;
+    }
+
+    link.addEventListener("click", () => {
+      emitAnalyticsEvent(eventName, {
+        href,
+        label: (link.textContent || "").trim().slice(0, 80)
+      });
+    });
   });
 });
