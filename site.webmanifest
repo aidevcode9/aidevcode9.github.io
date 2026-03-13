@@ -1,11 +1,11 @@
 {
-  "name": "Chuck Hernandez Advisory",
-  "short_name": "CH Advisory",
+  "name": "Chuck Hernandez",
+  "short_name": "Chuck Hernandez",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f7f1e8",
   "theme_color": "#135d5a",
-  "description": "Independent AI strategy, due diligence, and architecture consulting for leadership teams making high-stakes technology decisions.",
+  "description": "AI strategy, architecture, and applied AI systems for document-heavy, high-trust, and operational workflows.",
   "icons": [
     {
       "src": "/img/favicon.svg",

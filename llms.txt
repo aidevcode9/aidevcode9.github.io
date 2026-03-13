@@ -1,17 +1,17 @@
-# Chuck Hernandez Advisory
+# Chuck Hernandez
 
-> Independent AI strategy, due diligence, and architecture consulting for leadership teams making high-stakes technology decisions.
+> AI strategy, architecture, and applied AI systems for document-heavy, high-trust, and operational workflows.
 
-## Primary Services
+## Selected Engagements
 - AI Readiness Assessment: https://chuckhernandez.com/services.html#readiness
 - AI Due Diligence Support: https://chuckhernandez.com/services.html#diligence
 - Production AI Architecture Review: https://chuckhernandez.com/services.html#architecture
-- Fractional Technology Leadership: https://chuckhernandez.com/services.html#fractional
-- Embedded AI Engineering Sprint: https://chuckhernandez.com/services.html#embedded
+- Selected Advisory Support: https://chuckhernandez.com/services.html#advisory
+- Embedded AI Engineering: https://chuckhernandez.com/services.html#embedded
 
 ## Core Pages
 - Home: https://chuckhernandez.com/
-- Services: https://chuckhernandez.com/services.html
+- Engagements: https://chuckhernandez.com/services.html
 - About: https://chuckhernandez.com/about.html
 - Case Studies: https://chuckhernandez.com/case-studies.html
 - Insights: https://chuckhernandez.com/insights.html
@@ -31,7 +31,7 @@
 
 ## Positioning
 - Buyer focus: CEOs, CTOs, leadership teams, product leaders, and operators evaluating AI vendors or moving AI systems into production.
-- Engagement model: short, high-leverage consulting engagements, advisory work, architecture reviews, and fractional leadership support.
+- Engagement model: selected advisory and implementation engagements, architecture reviews, and hands-on applied AI support where the fit is strong.
 - Expertise themes: AI readiness, vendor evaluation, retrieval systems, grounded generation, enterprise governance, evals, observability, release controls, and modernization programs.
 
 ## Contact
