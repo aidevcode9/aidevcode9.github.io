@@ -87,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (
       href.endsWith("evidence-bound-document-qa.html") ||
       href.endsWith("kairosys-agentic-platform.html") ||
-      href.endsWith("aistrel-voice-agent.html") ||
       href.endsWith("ai-learning-platform.html")
     ) {
       eventName = "project_brief_click";

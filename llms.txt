@@ -22,7 +22,6 @@
 ## Project Briefs
 - Evidence-Bound Document QA: https://chuckhernandez.com/evidence-bound-document-qa.html
 - Kairosys Agentic Platform: https://chuckhernandez.com/kairosys-agentic-platform.html
-- Aistrel Voice Agent: https://chuckhernandez.com/aistrel-voice-agent.html
 - AI Learning Platform: https://chuckhernandez.com/ai-learning-platform.html
 
 ## Articles
