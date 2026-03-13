@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kairosys Agentic Platform | Chuck Hernandez</title>
-  <meta name="description" content="Architecture brief for an agentic platform with grounded retrieval, permissioned tools, structured outputs, and report-ready delivery patterns.">
+  <meta name="description" content="Architecture brief for a LangGraph-based agentic platform with grounded retrieval, permissioned tools, structured outputs, and report-ready delivery patterns.">
   <meta name="author" content="Chuck Hernandez">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#135d5a">
@@ -13,7 +13,7 @@
   <link rel="manifest" href="site.webmanifest">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Kairosys Agentic Platform | Chuck Hernandez">
-  <meta property="og:description" content="Architecture brief for an agentic platform with grounded retrieval, permissioned tools, structured outputs, and report-ready delivery patterns.">
+  <meta property="og:description" content="Architecture brief for a LangGraph-based agentic platform with grounded retrieval, permissioned tools, structured outputs, and report-ready delivery patterns.">
   <meta property="og:url" content="https://chuckhernandez.com/kairosys-agentic-platform.html">
   <meta property="og:site_name" content="Chuck Hernandez">
   <meta property="og:image" content="https://chuckhernandez.com/img/og-image.jpg">
@@ -22,7 +22,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kairosys Agentic Platform | Chuck Hernandez">
-  <meta name="twitter:description" content="Architecture brief for an agentic platform with grounded retrieval, permissioned tools, structured outputs, and report-ready delivery patterns.">
+  <meta name="twitter:description" content="Architecture brief for a LangGraph-based agentic platform with grounded retrieval, permissioned tools, structured outputs, and report-ready delivery patterns.">
   <meta name="twitter:image" content="https://chuckhernandez.com/img/og-image.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@
       "@type": "WebPage",
       "name": "Kairosys Agentic Platform",
       "url": "https://chuckhernandez.com/kairosys-agentic-platform.html",
-      "description": "Architecture brief for an agentic platform with grounded retrieval, permissioned tools, structured outputs, and report-ready delivery patterns."
+      "description": "Architecture brief for a LangGraph-based agentic platform with grounded retrieval, permissioned tools, structured outputs, and report-ready delivery patterns."
     }
   </script>
 </head>
@@ -81,14 +81,14 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <div class="eyebrow reveal">Architecture Brief</div>
-            <h1 class="page-title reveal">Kairosys paired grounded retrieval with permissioned tool use.</h1>
-            <p class="lead reveal">The system was designed as an agentic platform, not just a chat wrapper. The key job was to route requests through retrieval, controlled tools, and structured output contracts that downstream teams could actually rely on.</p>
+            <h1 class="page-title reveal">Kairosys paired LangGraph orchestration with grounded retrieval and permissioned tool use.</h1>
+            <p class="lead reveal">The system was designed as an agentic platform, not just a chat wrapper. LangGraph handled the mission runtime and orchestration flow, while retrieval, controlled tools, and structured output contracts kept the system usable in downstream workflows.</p>
           </div>
 
           <aside class="hero-panel reveal">
             <h2>What this brief shows</h2>
             <ul class="list-clean">
-              <li>agentic orchestration anchored to grounded retrieval</li>
+              <li>LangGraph mission orchestration anchored to grounded retrieval</li>
               <li>tool governance instead of open-ended tool execution</li>
               <li>structured output and report delivery for downstream use</li>
             </ul>
@@ -102,7 +102,7 @@
         <div class="section-head reveal">
           <div class="section-kicker">System Map</div>
           <h2>Six layers from intake to report-ready output.</h2>
-          <p>The platform is shaped around control. Retrieval, tool use, and output formatting are all constrained so the system can be useful without becoming sloppy.</p>
+          <p>The platform is shaped around control. LangGraph coordinates mission flow, while retrieval, tool use, and output formatting are constrained so the system can be useful without becoming sloppy.</p>
         </div>
 
         <div class="grid-3">
@@ -150,8 +150,9 @@
         <div class="detail-grid">
           <article class="panel reveal">
             <h2 class="panel-title">Build notes</h2>
-            <p class="spacer-top">The interesting part of this system is not that it uses agents. It is that the agent behavior is constrained tightly enough to be useful in production-minded workflows.</p>
+            <p class="spacer-top">The interesting part of this system is not just that it uses agents. It is that LangGraph gives the mission runtime explicit routing and state control, while the agent behavior stays constrained enough to be useful in production-minded workflows.</p>
             <ul class="list-clean">
+              <li>LangGraph manages mission routing, state transitions, and ordered execution</li>
               <li>retrieval is grounded and reranked before tool or generation steps depend on it</li>
               <li>tool access is permissioned instead of assumed</li>
               <li>outputs are shaped for machine-readable downstream use, not just human-friendly chat</li>
@@ -163,6 +164,7 @@
             <h3>Core stack</h3>
             <ul>
               <li>FastAPI application layer</li>
+              <li>LangGraph mission orchestrator</li>
               <li>Azure OpenAI model integration</li>
               <li>PostgreSQL and pgvector</li>
               <li>Structured JSON contracts</li>
