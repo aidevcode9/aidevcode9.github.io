@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evidence-Bound Document QA | Chuck Hernandez</title>
+  <meta name="description" content="Architecture brief for an evidence-grounded document QA system with hybrid retrieval, refusal logic, citation validation, and telemetry-first evaluation.">
+  <meta name="author" content="Chuck Hernandez">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#135d5a">
+  <link rel="canonical" href="https://chuckhernandez.com/evidence-bound-document-qa.html">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Evidence-Bound Document QA | Chuck Hernandez">
+  <meta property="og:description" content="Architecture brief for an evidence-grounded document QA system with hybrid retrieval, refusal logic, and citation validation.">
+  <meta property="og:url" content="https://chuckhernandez.com/evidence-bound-document-qa.html">
+  <meta property="og:site_name" content="Chuck Hernandez Advisory">
+  <meta property="og:image" content="https://chuckhernandez.com/img/og-image.jpg">
+  <meta property="og:image:alt" content="Chuck Hernandez Advisory social preview">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Evidence-Bound Document QA | Chuck Hernandez">
+  <meta name="twitter:description" content="Architecture brief for an evidence-grounded document QA system with hybrid retrieval, refusal logic, and citation validation.">
+  <meta name="twitter:image" content="https://chuckhernandez.com/img/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260312c">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="site.js?v=20260312c" defer></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Evidence-Bound Document QA",
+      "url": "https://chuckhernandez.com/evidence-bound-document-qa.html",
+      "description": "Architecture brief for an evidence-grounded document QA system with hybrid retrieval, refusal logic, citation validation, and telemetry-first evaluation."
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Chuck Hernandez Advisory home">
+        <span class="brand-mark" aria-hidden="true">CH</span>
+        <span class="brand-copy">
+          <span class="brand-name">Chuck Hernandez</span>
+          <span class="brand-tag">Independent AI Advisor</span>
+        </span>
+      </a>
+
+      <div class="site-nav-wrap">
+        <button class="menu-button" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="header-cta">
+            <a class="button button-primary" href="selected-work.html">Selected Work</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="page-hero compact">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow reveal">Architecture Brief</div>
+            <h1 class="page-title reveal">Evidence-bound document QA built to refuse weak answers.</h1>
+            <p class="lead reveal">This system was designed for legal and compliance-style knowledge workflows where the answer is only useful if the evidence is real, traceable, and strong enough to support the response.</p>
+          </div>
+
+          <aside class="hero-panel reveal">
+            <h2>What this brief shows</h2>
+            <ul class="list-clean">
+              <li>hybrid retrieval and reranking under evidence-heavy constraints</li>
+              <li>refusal logic when support is weak or incomplete</li>
+              <li>citation validation and telemetry instead of trust-me output</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">System Map</div>
+          <h2>Six stages from incoming question to evidence grade.</h2>
+          <p>The architecture is intentionally defensive. Each stage is there to reduce unsupported answers and make the final output auditable.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <div class="card-tag">Stage 1</div>
+            <h3>Threat screen</h3>
+            <p>Inspect the incoming query for injection attempts, unsafe instructions, or prompt patterns that should not survive into retrieval.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-tag">Stage 2</div>
+            <h3>Hybrid retrieval</h3>
+            <p>Combine lexical and vector retrieval, then apply reranking to improve both recall and passage quality before answer generation.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-tag">Stage 3</div>
+            <h3>Confidence gate</h3>
+            <p>Require enough support before the system proceeds. If the evidence is thin, the answer path stops instead of bluffing.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-tag">Stage 4</div>
+            <h3>Verification pass</h3>
+            <p>Challenge the draft answer against the retrieved support so the model has to survive a second evidence check.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-tag">Stage 5</div>
+            <h3>Citation validator</h3>
+            <p>Ensure cited passages exist, line up with the answer, and do not claim evidence the source does not actually contain.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-tag">Stage 6</div>
+            <h3>Evidence grade</h3>
+            <p>Grade support quality and log traces so the team can evaluate behavior from telemetry rather than anecdotes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="detail-grid">
+          <article class="panel reveal">
+            <h2 class="panel-title">Build notes</h2>
+            <p class="spacer-top">The design targets a class of use cases where "close enough" is not acceptable. The answer has to either point to real support or decline to answer.</p>
+            <ul class="list-clean">
+              <li>retrieval combines dense search, sparse search, and reranking rather than relying on one mechanism</li>
+              <li>answer generation is downstream of a confidence gate, not ahead of it</li>
+              <li>citation handling is a first-class control rather than a cosmetic add-on</li>
+              <li>telemetry is built in so teams can inspect behavior, failure modes, and regressions over time</li>
+            </ul>
+          </article>
+
+          <aside class="detail-sidebar reveal">
+            <h3>Core stack</h3>
+            <ul>
+              <li>Python application layer</li>
+              <li>PostgreSQL storage and logging</li>
+              <li>Hybrid retrieval and reranking</li>
+              <li>Langfuse-style tracing</li>
+              <li>Azure-ready deployment posture</li>
+            </ul>
+            <p><strong>Signal:</strong> grounded generation with refusal behavior.</p>
+            <p><strong>Shareability:</strong> architecture brief only, not public source.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-3">
+          <article class="card reveal">
+            <div class="card-tag">Production Posture</div>
+            <h3>Refusal is part of the product.</h3>
+            <p>This design treats unsupported output as a failure condition, not as an acceptable side effect of model behavior.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-tag">Evaluation</div>
+            <h3>Telemetry gives the team something real to improve.</h3>
+            <p>Logging, traces, and evidence grading create a path to regression testing and operating discipline.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-tag">Best Fit</div>
+            <h3>Useful where citations carry real consequences.</h3>
+            <p>The pattern fits legal, compliance, policy, and other knowledge workflows where weak sourcing creates risk quickly.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <div>
+            <div class="section-kicker">Next Step</div>
+            <h2>If this is the kind of system you need built or reviewed, start with Selected Work.</h2>
+            <p class="spacer-top">This brief is meant to show architecture judgment and product posture. The right next step is usually a direct conversation about the operating constraints in your own system.</p>
+            <div class="contact-actions">
+              <a class="button button-primary" href="selected-work.html">Back to Selected Work</a>
+              <a class="button button-secondary" href="contact.html">Contact</a>
+            </div>
+          </div>
+
+          <div class="contact-links">
+            <a class="contact-link" href="kairosys-agentic-platform.html">
+              <strong>Kairosys brief</strong>
+              <span>See the orchestration and tool-governance patterns.</span>
+            </a>
+            <a class="contact-link" href="for-hiring.html">
+              <strong>For hiring teams</strong>
+              <span>Use the hiring page if the need is a hands-on builder rather than a consulting engagement.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-copy">
+        <p>Project brief from Chuck Hernandez covering evidence-grounded retrieval, citation validation, and refusal-first system design.</p>
+        <p class="muted-note spacer-top">Copyright <span data-year></span> Chuck Hernandez.</p>
+      </div>
+
+      <div class="footer-links">
+        <a class="pill" href="selected-work.html">Selected Work</a>
+        <a class="pill" href="case-studies.html">Case Studies</a>
+        <a class="pill" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

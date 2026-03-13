@@ -84,8 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {
       eventName = "for_hiring_click";
     } else if (href.endsWith("selected-work.html")) {
       eventName = "selected_work_click";
-    } else if (href.includes("github.com/aidevcode9/evidence-doc-qa")) {
-      eventName = "repo_click";
+    } else if (
+      href.endsWith("evidence-bound-document-qa.html") ||
+      href.endsWith("kairosys-agentic-platform.html") ||
+      href.endsWith("aistrel-voice-agent.html") ||
+      href.endsWith("ai-learning-platform.html")
+    ) {
+      eventName = "project_brief_click";
     }
 
     if (!eventName) {

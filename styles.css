@@ -35,12 +35,13 @@ html {
 body {
   min-height: 100vh;
   font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
   color: var(--ink);
   background:
     radial-gradient(circle at top left, rgba(19, 93, 90, 0.12), transparent 30%),
     radial-gradient(circle at top right, rgba(139, 95, 74, 0.11), transparent 26%),
     linear-gradient(180deg, #fbf8f2 0%, #f4ede1 100%);
-  line-height: 1.65;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -145,11 +146,11 @@ select {
 }
 
 .brand-name {
-  font-family: "IBM Plex Serif", serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 1.55rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .brand-tag {
@@ -313,20 +314,20 @@ select {
 
 .display {
   max-width: 12ch;
-  font-family: "IBM Plex Serif", serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: clamp(3rem, 8vw, 5.3rem);
-  font-weight: 700;
-  line-height: 0.92;
-  letter-spacing: -0.04em;
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
 }
 
 .page-title {
   max-width: 13ch;
-  font-family: "IBM Plex Serif", serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: clamp(2.6rem, 6vw, 4.2rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 0.98;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
 }
 
 .lead {
@@ -517,9 +518,9 @@ select {
 }
 
 .metric-value {
-  font-family: "IBM Plex Serif", serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 2.25rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
 }
 
@@ -568,11 +569,11 @@ select {
 }
 
 .section-head h2 {
-  font-family: "IBM Plex Serif", serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 0.98;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
 }
 
 .section-head p {
@@ -959,9 +960,27 @@ select {
 
 .prose h2,
 .prose h3 {
-  font-family: "IBM Plex Serif", serif;
+  font-family: "IBM Plex Sans", sans-serif;
   line-height: 1;
+  font-weight: 600;
   letter-spacing: -0.02em;
+}
+
+.brand-tag,
+.eyebrow,
+.metric-label,
+.section-kicker,
+.card-tag,
+.article-meta,
+.case-meta,
+.service-meta,
+.detail-sidebar h3,
+.quote-attribution,
+.timeline-year,
+.credential,
+.article-aside h2 {
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.08em;
 }
 
 .prose h2 {

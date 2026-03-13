@@ -19,6 +19,12 @@
 - For Hiring: https://chuckhernandez.com/for-hiring.html
 - Selected Work: https://chuckhernandez.com/selected-work.html
 
+## Project Briefs
+- Evidence-Bound Document QA: https://chuckhernandez.com/evidence-bound-document-qa.html
+- Kairosys Agentic Platform: https://chuckhernandez.com/kairosys-agentic-platform.html
+- Aistrel Voice Agent: https://chuckhernandez.com/aistrel-voice-agent.html
+- AI Learning Platform: https://chuckhernandez.com/ai-learning-platform.html
+
 ## Articles
 - AI Due Diligence Checklist: https://chuckhernandez.com/ai-due-diligence-checklist.html
 - Is Your AI Pilot Ready for Production: https://chuckhernandez.com/ai-pilot-ready-for-production.html
@@ -32,4 +38,3 @@
 ## Contact
 - Scheduling: https://cal.com/chuck-h-cll6vj/15min
 - LinkedIn: https://linkedin.com/in/chuck-hernandez
-- GitHub: https://github.com/aidevcode9
