@@ -21,7 +21,7 @@
 
 ## Project Briefs
 - Evidence-Bound Document QA: https://chuckhernandez.com/evidence-bound-document-qa.html
-- Kairosys Agentic Platform: https://chuckhernandez.com/kairosys-agentic-platform.html
+- Kairosys LangGraph Agentic Platform: https://chuckhernandez.com/kairosys-agentic-platform.html
 - AI Learning Platform: https://chuckhernandez.com/ai-learning-platform.html
 
 ## Articles
@@ -32,7 +32,7 @@
 ## Positioning
 - Buyer focus: CEOs, CTOs, leadership teams, product leaders, and operators evaluating AI vendors or moving AI systems into production.
 - Engagement model: selected advisory and implementation engagements, architecture reviews, and hands-on applied AI support where the fit is strong.
-- Expertise themes: AI readiness, vendor evaluation, retrieval systems, grounded generation, enterprise governance, evals, observability, release controls, and modernization programs.
+- Expertise themes: AI readiness, vendor evaluation, retrieval systems, LangGraph orchestration, agentic orchestration, grounded generation, enterprise governance, evals, observability, release controls, and modernization programs.
 
 ## Contact
 - Scheduling: https://cal.com/chuck-h-cll6vj/15min
