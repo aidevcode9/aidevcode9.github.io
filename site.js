@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  /* ---- Analytics ---- */
   const emitAnalyticsEvent = (name, params = {}) => {
     const detail = {
       name,
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  /* ---- Mobile Menu ---- */
   const menuButton = document.querySelector(".menu-button");
   const siteNav = document.getElementById("site-nav");
 
@@ -43,6 +45,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* ---- Theme Toggle ---- */
+  const themeSwitch = document.querySelector(".theme-switch");
+
+  if (themeSwitch) {
+    themeSwitch.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+      updateThemeColor(next);
+    });
+  }
+
+  // Listen for OS-level preference changes (only if user hasn't manually chosen)
+  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  mediaQuery.addEventListener("change", (e) => {
+    if (!localStorage.getItem("theme")) {
+      const next = e.matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      updateThemeColor(next);
+    }
+  });
+
+  function updateThemeColor(theme) {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      meta.setAttribute("content", theme === "dark" ? "#0c0f14" : "#f8f9fb");
+    }
+  }
+
+  /* ---- Scroll Reveal ---- */
   const revealItems = document.querySelectorAll(".reveal");
   if (revealItems.length) {
     const observer = new IntersectionObserver(
@@ -66,10 +99,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* ---- Dynamic Year ---- */
   document.querySelectorAll("[data-year]").forEach((node) => {
     node.textContent = String(new Date().getFullYear());
   });
 
+  /* ---- Link Analytics ---- */
   document.querySelectorAll("a[href]").forEach((link) => {
     const href = link.getAttribute("href") || "";
     let eventName = "";
