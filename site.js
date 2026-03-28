@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateThemeColor(theme) {
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
-      meta.setAttribute("content", theme === "dark" ? "#0c0f14" : "#f8f9fb");
+      meta.setAttribute("content", theme === "dark" ? "#0c0f14" : "#f4f6f9");
     }
   }
 
